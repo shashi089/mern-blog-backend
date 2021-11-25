@@ -9,6 +9,7 @@ const categoryRoute = require("./routes/categories");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
+const port = process.env.PORT || 3001;
 
 app.use(cors());
 dotenv.config();
@@ -42,6 +43,6 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
-app.listen("3001", () => {
-  console.log("Backend is running.");
+app.listen(port, () => {
+  console.log(`Backend is running port ${port}.`);
 });
